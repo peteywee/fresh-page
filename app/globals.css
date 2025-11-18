@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --ts-black: #050507;
+  --ts-charcoal: #181A1F;
+  --ts-slate: #2C3036;
+  --ts-mist: #F3F4F6;
+  --ts-accent-green: #22C55E;
+  --ts-accent-amber: #F59E0B;
+  --ts-accent-red: #EF4444;
+}
+
+@layer base {
+  html,body { height: 100%; }
+  body {
+    font-family: 'Inter', sans-serif;
+      color: var(--ts-charcoal);
+      background-color: var(--ts-mist);
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+
+  /* subtle linen background pattern */
+  body::before{
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 10% 10%, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.00) 1px);
+    background-size: 20px 20px;
+    opacity: 0.6;
+    mix-blend-mode: normal;
+  }
+
+  h1,h2,h3,h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--ts-black);
+  }
+
+  a { color: inherit; }
+}
+
+  @layer components {
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    background-color: var(--ts-accent-green);
+    color: var(--ts-charcoal);
+    box-shadow: 0 10px 15px -3px rgba(2,6,23,0.08);
+    transition: background-color 150ms ease;
+  }
+
+  .btn-primary:hover { background-color: #16A34A; }
+
+  .card {
+    background-color: #ffffff;
+    border-radius: 1rem;
+    box-shadow: 0 6px 20px rgba(15,23,42,0.06);
+    border: 1px solid rgba(15,23,42,0.04);
+  }
+}
